@@ -1,7 +1,6 @@
 # file with a class for handling errors also has colors in it
 
 class Errors:
-    @staticmethod
     def color(col: int):
         colors = ('\033[95m', #Header 0
                   '\033[94m', #Blue 1
