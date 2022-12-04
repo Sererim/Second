@@ -1,11 +1,13 @@
 from Errors import Errors
 
+numbers: tuple = ('0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '.')
+
 class Count:
     
     num: int = 0
     numbers: list = [1]
     
-    def __init__(self, n):
+    def __init__(self, n: int):
         self.num = n
     
     def calculate(self):
@@ -18,8 +20,26 @@ class Count:
         return self.numbers
     
 def main():
-    val = Count(4)
-    print(val.calculate())
+    control: str = "NULL"
+    num: int = 0
+    while True:
+        print("Program is running.")
+        control = str(input("Enter a number.\n"))
+        for i in control:
+            if i not in numbers:
+                print(f"{Errors.message(0)}")
+                main()
+                
+        num = int(control)
+        val = Count(num)
+        print(f"{repr(val.calculate())}")
+        
+        control = input("Do you want to termiate the program Y/y ?\n")
+        if control == 'Y' or control == 'y':
+            break
+        else:
+            main()
+    return 0
     
     
 if __name__ == "__main__":
