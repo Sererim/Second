@@ -3,7 +3,6 @@
     Input: 4
     Output: [1, 2, 6, 24]
     [1, 1 * 2, 1 * 2 * 3, 1 * 2 * 3 * 4]
-    
 """
 
 from Errors import Errors
@@ -42,7 +41,7 @@ def main():
         val = Count(num)
         print(f"{repr(val.calculate())}")
         
-        control = input("Do you want to termiate the program Y/y ?\n")
+        control = input("Do you want to terminate the program Y/y ?\n")
         if control == 'Y' or control == 'y':
             break
         else:

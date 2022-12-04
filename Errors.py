@@ -1,6 +1,8 @@
 # file with a class for handling errors also has colors in it
 
 class Errors:
+       
+    @staticmethod
     def color(col: int):
         colors = ('\033[95m', #Header 0
                   '\033[94m', #Blue 1
@@ -17,7 +19,7 @@ class Errors:
     @staticmethod
     def message(msg: int):
         answer: list = [f"NaN.\n{Errors.color(1)}Not a number was entered!{Errors.color(6)}"
-                        f""
+                        f"{Errors.color(2)}Number should be more than zero{Errors.color(6)}"
                         f""
                         f""
                         f""

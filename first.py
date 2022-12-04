@@ -25,7 +25,7 @@ def main():
                     print(f"{Errors.message(0)}")
                     main()
         print(f"Sum of numbers in the number entered is: {num}")
-        enter = input("Do you want to termiate the program Y/y ?\n")
+        enter = input("Do you want to terminate the program Y/y ?\n")
         if enter == 'Y' or enter == 'y':
             break
         else:
