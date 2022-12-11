@@ -4,6 +4,7 @@ Input: N generates a list [-N; N]
 Output: list into a file.txt 
 
 """
+from Utils import Utils
 
 
 class Handle:
@@ -67,22 +68,34 @@ class Handle:
         
 
 def main() -> int:
-    num: int = 5
+    enter: str = "NULL"
+    num: int = 0
+    print(Utils.message(2))
+    print(Utils.message(4))
+    enter = str(input())        
+    num = int(enter)
+        
     work = Handle()
-    work.file_open()
     work.generate(num)
+    work.file_open()
     work.string_to_number()
     if not work.check_if_allowed():
         main()
-    print(work.N)
-    print(len(work.N))
-    print(work.temp)
-    print(work.position)
     print(work.find_multiplication())
-    work.make_string_to_file()
-    work.amend_a_file()
+    while True:
+        enter = input("Do you want to rewrite the file or amend it ?\n"
+                      "Enter 1 to rewrite it.\nEnter 2 to amend it.\n"
+                      "Enter Y or y to terminate the program.\n")
+        if enter == "Y" or enter == "y":
+            break
+        elif enter == "1":
+            work.write_to_file()
+        elif enter == "2":
+            work.amend_a_file()
+        else:
+            pass
     return 0
-
+        
 
 if __name__ == "__main__":
     main()
