@@ -4,7 +4,7 @@ Input: 3
 Output: Dict = {1: 2, 2: 2.25; 3: 2.37, ..., n: (1 + (1/n))**n}, : n - key for dict, (1 + (1/n))**n i value.
 
 """
-from Errors import Errors
+from Utils import Utils
 
 numbers: tuple = ('0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '.') # [0,10], len = 11
 
@@ -15,11 +15,12 @@ def main() -> int:
     full = {1:1}
     small = {1:1}
     while True:
-        print("Program is running.")
-        control = str(input("Enter a number.\n"))
+        print(Utils.message(2))
+        print(Utils.message(4))
+        control = str(input())
         for i in control:
             if i not in numbers:
-                print(f"{Errors.message(0)}")
+                print(f"{Utils.message(0)}")
                 main()
                 
         num = int(control)
@@ -31,8 +32,7 @@ def main() -> int:
             full.update(small)
         print("{}".format(full))
         
-        control = input("Do you want to termiate the program Y/y ?\n")
-        if control == 'Y' or control == 'y':
+        if Utils.end_program():
             break
         else:
             main()

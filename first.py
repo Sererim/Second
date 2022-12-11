@@ -5,7 +5,7 @@
     Input: 0.56
     Output: 11
 """
-from Errors import Errors
+from Utils import Utils
 
 numbers: tuple = ('0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '.') # [0,10], len = 11
 
@@ -15,8 +15,9 @@ def main():
     num: int = 0
     
     while True:
-        print("Program is running.\n")
-        enter = str(input("Enter a number.\n"))
+        print(Utils.message(2))
+        print(Utils.message(4))
+        enter = str(input())
         for i in enter:
             for x in numbers:
                 if i == x:
@@ -25,8 +26,7 @@ def main():
                     print(f"{Errors.message(0)}")
                     main()
         print(f"Sum of numbers in the number entered is: {num}")
-        enter = input("Do you want to terminate the program Y/y ?\n")
-        if enter == 'Y' or enter == 'y':
+        if Utils.end_program():
             break
         else:
             main()
