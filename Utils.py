@@ -1,5 +1,7 @@
 # file with a class for handling errors, generic messages and colors.
 
+numbers: tuple = ('0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '.') # [0,10], len = 11
+
 class Utils:
        
     @staticmethod
@@ -34,3 +36,19 @@ class Utils:
             return True
         else:
             return False
+        
+    @staticmethod
+    def isanumber(enter: str) -> bool:
+        for i in enter:
+            if i not in numbers:
+                print(f"{Utils.message(0)}")
+                return False
+        return True
+    
+    @staticmethod
+    def isanumber_lst(enter: list) -> bool:
+        for i in enter:
+            if i not in numbers:
+                print(f"{Utils.message(0)}")
+                return False
+        return True

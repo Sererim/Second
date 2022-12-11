@@ -18,10 +18,8 @@ def main() -> int:
         print(Utils.message(2))
         print(Utils.message(4))
         control = str(input())
-        for i in control:
-            if i not in numbers:
-                print(f"{Utils.message(0)}")
-                main()
+        if not Utils.isanumber(control):
+            main()
                 
         num = int(control)
         full.clear()
